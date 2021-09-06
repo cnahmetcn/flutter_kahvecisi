@@ -1,0 +1,97 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(RowApp());
+}
+
+class RowApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.brown[500],
+        // appBar: AppBar(
+        //   centerTitle: true,
+        //   title: Text('Flutter Kahvecisi'),
+        // ),
+        body: SafeArea(
+          child: Row(
+            //mainAxisSize: MainAxisSize.min,
+            //mainAxisAlignment: MainAxisAlignment.center, // Ekranın ortasından sıralar
+            //mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Hepsinin çevresinde eşit boşluklar bırakarak sıralar
+            //mainAxisAlignment: MainAxisAlignment.spaceAround, // Containerlar arası Eşit boşluklar bırakarak sıralar
+            //mainAxisAlignment: MainAxisAlignment.spaceBetween, // Köşelerden başlayarak eşit boşkular koyup sıralar
+            //mainAxisAlignment: MainAxisAlignment.start, // En üst köşeden başlar
+            //mainAxisAlignment: MainAxisAlignment.end, // En alt köşeden başlar
+
+            //verticalDirection: VerticalDirection.down, // Yukarıdan aşağıya doğru sıralar
+            //verticalDirection: VerticalDirection.up, // Aşağıdan yukarıya doğru sıralar
+
+            //crossAxisAlignment: CrossAxisAlignment.start, // Sola doğru sıralar
+            //crossAxisAlignment: CrossAxisAlignment.end, // Sağa doğru sıralar
+            //crossAxisAlignment: CrossAxisAlignment.center, // Ortaya doğru sıralar
+            crossAxisAlignment:
+                CrossAxisAlignment.stretch, // Containerları yayar.
+            children: [
+              Container(
+                //width: 200,
+                height: 100,
+                color: Colors.white,
+                child: Text('1. Container'),
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 10),
+                // width: 200,
+                height: 100,
+                color: Colors.yellow,
+                child: Text('2. Container'),
+              ),
+              Container(
+                // width: 200,
+                height: 100,
+                color: Colors.pink,
+                child: Text('3. Container'),
+              ),
+              SizedBox(
+                width: 20,
+              ),
+              Container(
+                //  width: 200,
+                height: 100,
+                color: Colors.blue,
+                child: Text('4. Container'),
+              ),
+              Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.red,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.green,
+                )
+              ]),
+              // Container(
+              //   width: double.infinity,
+              // ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+/*
+Container(
+  width: double.infinity,
+),
+
+bu konteynır bir hayalet konteynırıdır. Diğer konteynırları sağa
+doğru yaslayabilmek için sonsuz gennişlik verdik ve column un 
+tüm ekranı kaplamasını sağladık. 
+*/
